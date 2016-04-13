@@ -14,6 +14,9 @@ import com.wym.demo.recyclerview.widget.RecyclerAdapter;
 
 import java.util.Arrays;
 
+/**
+ * 业务逻辑的代码都写在 Presenter 里面
+ */
 public class MainPresenter
 {
     MainActivity mActivity;
