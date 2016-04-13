@@ -8,9 +8,6 @@ import com.wym.demo.recyclerview.R;
 import com.wym.demo.recyclerview.presenter.MainPresenter;
 
 /**
- * @author VenomWay
- * @date 16.3.1
- * <p/>
  * 在 Activity 中，只进行 view 的相关操作，其他的操作都放到 Presenter 中。
  */
 public class MainActivity extends FragmentActivity

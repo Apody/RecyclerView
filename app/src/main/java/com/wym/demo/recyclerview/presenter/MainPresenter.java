@@ -12,10 +12,8 @@ import com.wym.demo.recyclerview.model.IMainModel;
 import com.wym.demo.recyclerview.model.impl.MainModel;
 import com.wym.demo.recyclerview.widget.RecyclerAdapter;
 
-/**
- * @author VenomWay
- * @date 16.3.2
- */
+import java.util.Arrays;
+
 public class MainPresenter
 {
     MainActivity mActivity;
@@ -29,7 +27,7 @@ public class MainPresenter
 
     public RecyclerView.Adapter getAdapter()
     {
-        RecyclerAdapter<String> adapter = new RecyclerAdapter<String>(mActivity, R.layout.item_recycler_view, mModel.initData(12))
+        RecyclerAdapter<String> adapter = new RecyclerAdapter<String>(mActivity, R.layout.item_recycler_view, mModel.initData(6))
         {
             @Override
             public void bind(RecyclerViewHolder holder, String item, int position)
@@ -42,11 +40,19 @@ public class MainPresenter
         adapter.setOnItemClickListener(new RecyclerAdapter.OnItemClickListener<String>()
         {
             @Override
-            public void onItemClick(String item, View view, int position)
+            public void onItemClick(String item, View itemView, int position)
             {
                 Toast.makeText(mActivity, ++position + " clicked", Toast.LENGTH_SHORT).show();
             }
+
+            @Override
+            public boolean onItemLongClick(String item, View itemView, int position)
+            {
+                return true;
+            }
         });
+
+        adapter.addItems(Arrays.asList("7", "8"), 0);
 
         return adapter;
     }

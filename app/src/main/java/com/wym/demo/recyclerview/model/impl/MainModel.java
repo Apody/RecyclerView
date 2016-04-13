@@ -5,10 +5,6 @@ import com.wym.demo.recyclerview.model.IMainModel;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author VenomWay
- * @date 16.3.2
- */
 public class MainModel implements IMainModel
 {
     public List<String> mData;
